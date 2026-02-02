@@ -234,7 +234,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 100px;
   margin-right: 8px;
 }
 
@@ -2248,9 +2248,80 @@ section,
 /*--------------------------------------------------------------
 # Home Page - spacing and readability
 --------------------------------------------------------------*/
-.index-page .hero p {
-  max-width: 32rem;
+/* Hero banner: center-aligned, lower position, professional look */
+.index-page .hero {
+  align-items: flex-start;
+  padding-top: 32vh;
+}
+
+.index-page .hero .hero-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1.5rem;
+  background: rgb(0 0 0 / 16%);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.index-page .hero .hero-content h2 {
+  text-align: center;
+  white-space: nowrap;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.index-page .hero .hero-content p {
+  text-align: center;
+  max-width: 28rem;
   line-height: 1.6;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.index-page .hero .hero-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.index-page .hero .hero-cta .btn-get-started {
+  padding: 10px 32px 12px 32px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 992px) {
+  .index-page .hero .hero-content h2 {
+    white-space: normal;
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .index-page .hero {
+    padding-top: 24vh;
+  }
+
+  .index-page .hero .hero-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .index-page .hero .hero-content h2 {
+    font-size: 1.5rem;
+    white-space: normal;
+  }
+
+  .index-page .hero .hero-content p {
+    font-size: 1rem;
+  }
 }
 
 .index-page .about .content p,
