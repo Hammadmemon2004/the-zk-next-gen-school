@@ -60,10 +60,15 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+html {
+  overflow-x: hidden;
+}
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  overflow-x: hidden;
 }
 
 a {
@@ -229,6 +234,11 @@ h6 {
   z-index: 997;
 }
 
+.header .container-fluid {
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
 .header .logo {
   line-height: 1;
 }
@@ -265,18 +275,74 @@ h6 {
 }
 
 @media (max-width: 1200px) {
+  .header {
+    padding: 10px 0;
+  }
+
   .header .logo {
     order: 1;
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .header .logo img {
+    max-height: 45px;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  .header .logo h1 {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .header .btn-getstarted {
-    order: 2;
-    margin: 0 15px 0 0;
-    padding: 6px 15px;
+    order: 3;
+    margin: 0 0 0 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    flex-shrink: 0;
   }
 
   .header .navmenu {
-    order: 3;
+    order: 2;
+    flex-shrink: 0;
+  }
+}
+
+/* Extra small mobile - logo text hidden, smaller button */
+@media (max-width: 576px) {
+  .header {
+    padding: 8px 0;
+  }
+
+  .header .logo img {
+    max-height: 38px;
+    margin-right: 4px;
+  }
+
+  .header .logo h1 {
+    font-size: 14px;
+    max-width: 120px;
+  }
+
+  .header .btn-getstarted {
+    padding: 5px 10px;
+    font-size: 11px;
+    margin: 0 0 0 5px;
+  }
+
+  .header .container-fluid {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .mobile-nav-toggle {
+    font-size: 24px;
+    padding: 6px;
   }
 }
 
@@ -400,14 +466,23 @@ h6 {
     color: var(--nav-color);
     font-size: 28px;
     line-height: 0;
-    margin-right: 10px;
+    margin-right: 0;
+    margin-left: 8px;
+    padding: 8px;
     cursor: pointer;
     transition: color 0.3s;
+    flex-shrink: 0;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
 
   .navmenu {
     padding: 0;
     z-index: 9997;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
   }
 
   .navmenu ul {
